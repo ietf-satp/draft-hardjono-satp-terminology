@@ -15,8 +15,8 @@ pi:
   compact: yes
   subcompact: no
 
-title: Secure Asset Transfer (SAT) Terminology
-abbrev: SAT Terminology
+title: Secure Asset Transfer Protocol (SATP) Terminology
+abbrev: SATP Terminology
 docname: draft-hardjono-satp-terminology-latest
 category: info
 
@@ -37,24 +37,90 @@ venue:
   latest: "https://ietf-satp.github.io/draft-hardjono-satp-terminology/draft-hardjono-satp-terminology.html"
 
 author:
- -
+
+  -
+    ins: M. Hargreaves
+    name: Martin Hargreaves
+    organization: Quant Network
+    email: martin.hargreaves@quant.network
+  -
     ins: T. Hardjono
     name: Thomas Hardjono
     organization: MIT
     email: hardjono@mit.edu
- -
-    ins: D. Avrillionis
-    name: Denis Avrillionis
-    organization: Compellio Inc.
-    email: compellio.com
+  -
+    ins: R. Belchior
+    name: Rafael Belchior
+    organization: INESC-ID, Técnico Lisboa, Blockdaemon
+    email: rafael.belchior@tecnico.ulisboa.pt
+  -
+    ins: V. Ramakrishna
+    name: Venkatraman Ramakrishna
+    organization: IBM
+    email: vramakr2@in.ibm.com
+  -
+    ins: A. Chiriac
+    name: Alex Chiriac
+    organization: Quant Network
+    email: alexandru.chiriac@quant.network
 
+informative:
+  NIST:
+    author:
+    - ins: D. Yaga
+    - ins: P. Mell
+    - ins: N. Roby
+    - ins: K. Scarfone
+    date: October 2018
+    target: https://doi.org/10.6028/NIST.IR.8202
+    title: NIST Blockchain Technology Overview (NISTR-8202)
 
+  ECDSA:
+    author:
+    date: February 2023
+    target: https://doi.org/10.6028/NIST.FIPS.186-5
+    title: Digital Signature Standard (FIPS 186-5)
+
+  MICA:
+    author:
+    - ins: European Commission
+    date: June 2023
+    target: https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica
+    title: EU Directive on Markets in Crypto-Assets Regulation (MiCA)
+
+  ARCH:
+    author:
+    - ins: T. Hardjono
+    - ins: M. Hargreaves
+    - ins: N. Smith
+    - ins: V. Ramakrishna
+    date: June 2024
+    target: https://datatracker.ietf.org/doc/draft-ietf-satp-architecture/
+    title: Secure Asset Transfer (SAT) Interoperability Architecture
+
+  RFC5939: RFC5939
+
+  RFC9334: RFC9334
+
+normative:
+  JWT: RFC7519
+  JSON: RFC8259
+  JWS: RFC7515
+  JWA: RFC7518
+  REQ-LEVEL: RFC2119
+  BASE64: RFC4648
+  DATETIME: RFC3339
+  RFC2616: RFC2616
+
+  X.500:
+    author:
+    - ins: ITU-T
+    date: 2005
+    title: "The Directory: Overview of concepts, models and services"
 
 --- abstract
 
-This document proposes an interoperability architecture for
-      the secure transfer of assets between two networks or
-      systems based on the gateway model.
+This memo describes the Secure Asset Transfer (SAT) Protocol for digital assets. SAT is a protocol operating between two gateways that conducts the transfer of a digital asset from one gateway to another, each representing their corresponding digital asset networks. The protocol establishes a secure channel between the endpoints and implements a 2-phase commit (2PC) to ensure the properties of transfer atomicity, consistency, isolation and durability.
 
 --- middle
 
@@ -860,5 +926,6 @@ Secure Asset Transfer architecture to be flexible and inclusive,
 and thereby meet compatibility goals.
 
 --- back
+
 
 
