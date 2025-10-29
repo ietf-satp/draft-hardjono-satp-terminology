@@ -33,8 +33,8 @@ venue:
   type: "Working Group"
   mail: "sat@ietf.org"
   arch: "https://mailarchive.ietf.org/arch/browse/sat/"
-  github: "ietf-satp/draft-ietf-satp-architecture"
-  latest: "https://ietf-satp.github.io/draft-ietf-satp-architecture/draft-ietf-satp-architecture.html"
+  github: "ietf-satp/draft-hardjono-satp-terminology"
+  latest: "https://ietf-satp.github.io/draft-hardjono-satp-terminology/draft-hardjono-satp-terminology.html"
 
 author:
  -
@@ -1012,3 +1012,4 @@ Secure Asset Transfer architecture to be flexible and inclusive,
 and thereby meet compatibility goals.
 
 --- back
+
