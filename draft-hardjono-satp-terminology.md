@@ -60,7 +60,6 @@ informative:
     target: https://doi.org/10.6028/NIST.IR.8202
     title: NIST Blockchain Technology Overview (NISTR-8202)
 
-
   NISTIR8301:
     author: NIST
     date: February 2021
@@ -72,7 +71,6 @@ informative:
     date: January 2020
     target: https://doi.org/10.6028/NIST.CSWP.9
     title: NIST A Taxonomic Approach to Understanding Emerging Blockchain Identity Management Systems
-
 
 normative:
   JWT: RFC7519
@@ -156,6 +154,7 @@ Certain industry verticals or asset-specific trading communities (e.g. Bonds) ma
 * Decentralized Registry: The decentralized and persistent storage of the artifacts, schemas and DARs pertaining to a tokenized real-world asset (RWA) that enables the legal status of the token to be verified.
 
 --- back
+
 
 
 
