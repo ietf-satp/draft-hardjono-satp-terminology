@@ -37,32 +37,17 @@ venue:
   latest: "https://ietf-satp.github.io/draft-hardjono-satp-terminology/draft-hardjono-satp-terminology.html"
 
 author:
-
-  -
-    ins: M. Hargreaves
-    name: Martin Hargreaves
-    organization: Quant Network
-    email: martin.hargreaves@quant.network
   -
     ins: T. Hardjono
     name: Thomas Hardjono
     organization: MIT
     email: hardjono@mit.edu
   -
-    ins: R. Belchior
-    name: Rafael Belchior
-    organization: INESC-ID, Técnico Lisboa, Blockdaemon
-    email: rafael.belchior@tecnico.ulisboa.pt
-  -
-    ins: V. Ramakrishna
-    name: Venkatraman Ramakrishna
-    organization: IBM
-    email: vramakr2@in.ibm.com
-  -
-    ins: A. Chiriac
-    name: Alex Chiriac
-    organization: Quant Network
-    email: alexandru.chiriac@quant.network
+    ins: D. Avrillionis
+    name: Denis Avrillionis
+    organization: Compellio Inc.
+    email: denis@compellio.com
+    
 
 informative:
   NIST:
@@ -196,6 +181,7 @@ Certain industry verticals or asset-specific trading communities (e.g. Bonds) ma
 
 
 --- back
+
 
 
 
