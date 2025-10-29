@@ -47,7 +47,6 @@ author:
     name: Denis Avrillionis
     organization: Compellio Inc.
     email: denis@compellio.com
-  -
   
 informative:
 
@@ -120,9 +119,9 @@ The goal of this document is to provide a terminology definition of the entities
 
 As far as possible, this document will borrow existing terminology from other published standards. The sources of this existing terminology will be cited. When needed, the document will be verbose in providing definitions in order to remove any ambiguity in the use of the constructs (e.g. smart contract invoked by a gateway, versus that invoked by a client).
 
+
 # Asset Networks Related Terminology
 {: #terms1}
-
 * Address: A short, alphanumeric string derived from a user’s public key using a hash function, with additional data to detect errors. Addresses are used to send and receive digital assets. [NISTIR8202]
 Account: An entity in a blockchain that is identified with an address and can send transactions to the blockchain. [NISTIR8301]
 Atomic swap: An exchange of tokens that does not involve the intervention of any trusted intermediary and automatically reverts if all of the provisions are not met. [NISTIR8301]
@@ -151,12 +150,8 @@ Atomic swap: An exchange of tokens that does not involve the intervention of any
 * Wallets, Custodial: Account custody -- and the custody of the associated tokens--  which is delegated to institutional third-party custodians who hold and safeguard private keys on behalf of users. They provide different degrees of custody services and risk management. Custodial wallets are also known as externally hosted wallets or managed wallets. [NISTIR8301]
 
 
-{::boilerplate bcp14-tagged}
-
-
 # Gateway Related Terminology
 {: #terms2}
-
 * Gateway smart contracts: The smart contracts invoked by SATP Gateways in course of completing an asset transfer from an origin asset network to a destination asset network. Some of the smart contracts invoked by a gateway may be generic to any type of asset (or asset class) on the asset networks, while other smart contracts may be designed specifically for gateways.
 
 * Views: A projection of the state of an asset on a blockchain or asset network intended for an audience external to the network. This state information may pertain to a single element, a subset of the state, or a function over a subset. For private (permissioned) asset networks, a gateway may provide an interface to access the view from the internal private ledger, and to return the relevant cryptographic proof regarding the truthfulness of the claim regarding then reported state of the asset. [SATP-VIEWS]
@@ -166,7 +161,6 @@ Atomic swap: An exchange of tokens that does not involve the intervention of any
 
 # Digitized Assets and Registries Terminology
 {: #terms3}
-
 * Artifacts: The set of metadata information that supports the verification of a tokenized asset recorded on an asset network or specific blockchain. The artifact information may be recorded within the body of a value-bearing token, or it may be recorded in a separate utility token (bearing no value) that is referenced by the value-bearing token.  Other The artifact information may be recorded off-chain in artifacts registries and other proprietary databases (e.g. in Central Securities Depositories (CSD)).
 
 * Central Securities Depositories: A central securities depository (CSD) is a specialized financial market infrastructure (FMI) organization holding securities such as shares or bonds, either in certificated or uncertificated (dematerialized) form, allowing ownership to be easily transferred through a book entry rather than by a transfer of physical certificates. This allows brokers and financial companies to hold their securities at one location where they can be available for clearing and settlement. [Wikipedia]
@@ -180,8 +174,8 @@ Certain industry verticals or asset-specific trading communities (e.g. Bonds) ma
 
 * Decentralized Registry: The decentralized and persistent storage of the artifacts, schemas and DARs pertaining to a tokenized real-world asset (RWA) that enables the legal status of the token to be verified.
 
-
 --- back
+
 
 
 
