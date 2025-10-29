@@ -120,89 +120,50 @@ normative:
 
 --- abstract
 
-This memo describes the Secure Asset Transfer (SAT) Protocol for digital assets. SAT is a protocol operating between two gateways that conducts the transfer of a digital asset from one gateway to another, each representing their corresponding digital asset networks. The protocol establishes a secure channel between the endpoints and implements a 2-phase commit (2PC) to ensure the properties of transfer atomicity, consistency, isolation and durability.
+This memo collates existing terminology related to digital assets, asset networks and distributed ledger technology (DLT) that are relevant to the secure asset transfer protocol (SATP) and the IETF more broadly. Existing terms are borrowed as much as possible, and new terms are introduced only when necessary and with emphasis on technology neutrality.
 
 --- middle
 
 # Introduction
 {: #introduction}
- This document proposes an interoperability architecture based on gateways,
-      which are points of interconnection between networks or systems.
+The SAT protocol for interoperability utilizes peered gateways to perform a unidirectional transfer of a digital assets, from an origin asset network to a destination asset network [ARCH].  As stated in [CORE] the SAT protocol is agnostic to the type of network or system behind the gateways, and the protocol focuses on the interactions between the two gateways.
 
-There are several services that may be offered by a gateway,
-one of which being the direct transfer of a digital asset from one network
-to another via pairs of gateways without a mediating third party.
+While the SAT protocol defines the interaction between two gateways such that certain properties of the transfer is achieved (atomicity, consistency, isolation, durability), the protocol specification does not define how each gateway interfaces and interacts with their respective asset network. Furthermore, the SAT protocol employs an abstraction of the functions present in these asset network.  Examples of such abstraction include the functions of locking (disabling) the asset on a network, burning (destroying) an asset, minting (creating) and so on. However, in order to achieve a higher degree of precision in describing the utilization of the SAT protocol and its impact on asset networks, a definition of these terms is required.
 
-A given network or system may have one or more gateways to perform
-a unidirectional direct transfer of digital assets to
-another network possessing one or more compatible gateways.
+The goal of this document is to provide a terminology definition of the entities, constructs and on-chain functions that are relevant within the context of a SAT protocol deployment with gateways. A layered approach is adopted to describe these constructs and on-chain  functions, in order to minimize confusion with regards to which entities are utilizing these.
 
-Both gateways must implement a secure asset transfer protocol
-that must satisfy certain security, privacy and atomicity requirements.
+As far as possible, this document will borrow existing terminology from other published standards. The sources of this existing terminology will be cited. When needed, the document will be verbose in providing definitions in order to remove any ambiguity in the use of the constructs (e.g. smart contract invoked by a gateway, versus that invoked by a client).
 
-The purpose of this architecture document is to provide a technical framework
-within which to define the required properties of
-a gateway that supports the secure asset transfer protocol.
+# Asset Networks Related Terminology
+{: #terms1}
 
-# Terminology
-{: #terms}
+* Address: A short, alphanumeric string derived from a user’s public key using a hash function, with additional data to detect errors. Addresses are used to send and receive digital assets. [NISTIR8202]
+Account: An entity in a blockchain that is identified with an address and can send transactions to the blockchain. [NISTIR8301]
+Atomic swap: An exchange of tokens that does not involve the intervention of any trusted intermediary and automatically reverts if all of the provisions are not met. [NISTIR8301]
 
-Following is some terminology used in the current document.
-We borrow terminology from NIST and ISO as much as possible,
-introducing new terms only when needed:
+* Blockchain: Blockchains are distributed digital ledgers of cryptographically signed transactions that are grouped into blocks. Each block is cryptographically linked to the previous one (making it tamper evident) after validation and undergoing a consensus decision. As new blocks are added, older blocks become more difficult to modify (creating tamper resistance). New blocks are replicated across copies of the ledger within the network, and any conflicts are resolved automatically using established rules. [NISTIR8202]
+
+* Custodian: A third-party entity that holds and safeguards a user’s private keys or digital assets on their behalf. Depending on the system, a custodian may act as an exchange and provide additional services, such as staking, lending, account recovery, or security features. [NISTIR8301]
+
+* Consensus: A process to achieve agreement within a distributed system on the valid Cryptocurrency state. Also known as a consensus algorithm, consensus mechanism, consensus method. [NISTIR8202]
+
+* Double Spend: Transacting with the same set of digital assets more than once. [NISTIR8202]
 
 
-* Asset network (system): The network or system where a digital asset is utilized.
+* Off-chain: Refers to data that is stored or a process that is implemented and executed outside of any blockchain system. [NISTIR8301]
 
-* Asset Transfer Protocol: The protocol used to transfer (move)
-a digital asset from one network to another using gateways.
+* Oracle: A source of data from outside a blockchain that serves as input for a smart contract. [NISTIR8301]
 
-* Origin network: The current network where the digital asset is located.
+* Permissioned blockchain: A system where every node, and every user must be granted permissions to utilize the system (generally assigned by an administrator or consortium). [NISTIR8202]
 
-* Destination network: The network to which a digital asset is to be transferred.
+* Permissionless blockchain: A system where all users’ permissions are equal and not set by any administrator or consortium. [NISTIR8202]
 
-* Resource Domain: The collection of resources and entities
-participating within an asset network.
-The domain denotes a boundary for permissible or authorized actions on resources.
+* Smart contract: A collection of code and data (sometimes referred to as functions and state) that is deployed using cryptographically signed transactions on the blockchain network. The smart contract is executed by nodes within the blockchain network; all nodes must derive the same results for the execution, and the results of execution are recorded on the blockchain. [NISTIR8202]
 
-* Interior Resources: The various interior protocols,
-data structures and cryptographic constructs that
-are a core part of an asset network or system.
+* Wallet: Software used to store and manage asymmetric-keys and addresses used for transactions. [NISTIR8202]
 
-* Exterior Resources: The various protocols,
-data structures and cryptographic constructs
-that are outside of (external to) the network or system.
+* Wallets, Custodial: Account custody -- and the custody of the associated tokens--  which is delegated to institutional third-party custodians who hold and safeguard private keys on behalf of users. They provide different degrees of custody services and risk management. Custodial wallets are also known as externally hosted wallets or managed wallets. [NISTIR8301]
 
-* Gateway: The collection of services which connects
-to a minimum of one network or system,
-and which implements the secure asset transfer protocol.
-
-* Entity public-key pair: This the private-public key pairs of an entity,
-where the public-key is available and verifiable outside the network.
-Among others, it may be utilized for interactions withother entities
-from outside the network.
-The term is used to distinguish this public-key from other key-pairs
-belonging to the same entity, but which is only available within the (private) network.
-
-* Originator: Person or organization in an origin network seeking
-the transfer of a digital asset to a beneficiary located in a remote network.
-
-* Beneficiary: Person or organization in an destination network seeking
-to receive the transfer of a digital asset from an originator located in a remote network.
-
-* Gateway device identity: The identity of the device implementing the gateway functions.
-The term is used in the sense of IDevID (IEEE 802.1AR) or EK/AIK (in TPM1.2 and TPM2.0) [IDevID].
-
-* Gateway owner: The entity that owns and operates a gateway within a network.
-
-* Application Context-ID: The relevant identifier used by originator's application and
-the beneficiary's application to identify the context of the asset transfer at the gateway level.
-The context identifier may also be used to bind the application to
-the selected gateway for the given transfer instance, identified by a Session-ID.
-
-* Gateway Session-ID: This is the identifier used between the sender gateway and
-the recipient gateway to identify the specific transfer instance.
-The Session-ID must be included in all messages between the gateways.
 
 {::boilerplate bcp14-tagged}
 
@@ -926,6 +887,7 @@ Secure Asset Transfer architecture to be flexible and inclusive,
 and thereby meet compatibility goals.
 
 --- back
+
 
 
 
