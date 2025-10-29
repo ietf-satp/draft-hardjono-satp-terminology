@@ -50,7 +50,7 @@ author:
   
 informative:
 
-  NIST:
+  NISTIR8202:
     author:
     - ins: D. Yaga
     - ins: P. Mell
@@ -60,32 +60,19 @@ informative:
     target: https://doi.org/10.6028/NIST.IR.8202
     title: NIST Blockchain Technology Overview (NISTR-8202)
 
-  ECDSA:
-    author:
-    date: February 2023
-    target: https://doi.org/10.6028/NIST.FIPS.186-5
-    title: Digital Signature Standard (FIPS 186-5)
 
-  MICA:
-    author:
-    - ins: European Commission
-    date: June 2023
-    target: https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica
-    title: EU Directive on Markets in Crypto-Assets Regulation (MiCA)
+  NISTIR8301:
+    author: NIST
+    date: February 2021
+    target: https://doi.org/10.6028/NIST.IR.8301
+    title: NIST Blockchain Networks: Token Design and Management Overview. (NISTR-8301)
 
-  ARCH:
-    author:
-    - ins: T. Hardjono
-    - ins: M. Hargreaves
-    - ins: N. Smith
-    - ins: V. Ramakrishna
-    date: June 2024
-    target: https://datatracker.ietf.org/doc/draft-ietf-satp-architecture/
-    title: Secure Asset Transfer (SAT) Interoperability Architecture
+  NISTCSWP:
+    author: NIST
+    date: January 2020
+    target: https://doi.org/10.6028/NIST.CSWP.9
+    title: NIST A Taxonomic Approach to Understanding Emerging Blockchain Identity Management Systems
 
-  RFC5939: RFC5939
-
-  RFC9334: RFC9334
 
 normative:
   JWT: RFC7519
@@ -96,12 +83,6 @@ normative:
   BASE64: RFC4648
   DATETIME: RFC3339
   RFC2616: RFC2616
-
-  X.500:
-    author:
-    - ins: ITU-T
-    date: 2005
-    title: "The Directory: Overview of concepts, models and services"
 
 --- abstract
 
@@ -175,6 +156,7 @@ Certain industry verticals or asset-specific trading communities (e.g. Bonds) ma
 * Decentralized Registry: The decentralized and persistent storage of the artifacts, schemas and DARs pertaining to a tokenized real-world asset (RWA) that enables the legal status of the token to be verified.
 
 --- back
+
 
 
 
