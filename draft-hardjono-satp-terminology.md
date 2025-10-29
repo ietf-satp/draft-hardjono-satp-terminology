@@ -50,7 +50,7 @@ author:
   
 informative:
 
-  NIST8202:
+  NISTIR8202:
     author:
     - ins: D. Yaga
     - ins: P. Mell
@@ -60,11 +60,11 @@ informative:
     target: https://doi.org/10.6028/NIST.IR.8202
     title: NIST Blockchain Technology Overview (NISTR-8202)
 
-  NIST8301:
+  NISTIR8301:
     author:
     date: February 2021
     target: https://doi.org/10.6028/NIST.IR.8301
-    title: NIST Blockchain Networks Token Design and Management Overview. (NISTR-8301)
+    title: NIST Blockchain Networks Token Design and Management Overview (NISTR-8301)
 
   NISTCSWP:
     author:
@@ -155,6 +155,7 @@ Certain industry verticals or asset-specific trading communities (e.g. Bonds) ma
 * Decentralized Registry: The decentralized and persistent storage of the artifacts, schemas and DARs pertaining to a tokenized real-world asset (RWA) that enables the legal status of the token to be verified.
 
 --- back
+
 
 
 
