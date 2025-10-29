@@ -167,6 +167,21 @@ Atomic swap: An exchange of tokens that does not involve the intervention of any
 
 {::boilerplate bcp14-tagged}
 
+
+# Gateway Related Terminology
+{: #terms2}
+
+* Gateway smart contracts: The smart contracts invoked by SATP Gateways in course of completing an asset transfer from an origin asset network to a destination asset network. Some of the smart contracts invoked by a gateway may be generic to any type of asset (or asset class) on the asset networks, while other smart contracts may be designed specifically for gateways.
+
+* Views: A projection of the state of an asset on a blockchain or asset network intended for an audience external to the network. This state information may pertain to a single element, a subset of the state, or a function over a subset. For private (permissioned) asset networks, a gateway may provide an interface to access the view from the internal private ledger, and to return the relevant cryptographic proof regarding the truthfulness of the claim regarding then reported state of the asset. [SATP-VIEWS]
+
+* View Address: A unique identifier or locator for a view into the state of an asset on a blockchain or asset network. [SATP-VIEWS]
+
+
+# Digitized Assets and Registries Terminology
+{: #terms3}
+
+
 # Assumptions and Principles
 {: #assumptions}
 
@@ -887,6 +902,7 @@ Secure Asset Transfer architecture to be flexible and inclusive,
 and thereby meet compatibility goals.
 
 --- back
+
 
 
 
