@@ -47,9 +47,10 @@ author:
     name: Denis Avrillionis
     organization: Compellio Inc.
     email: denis@compellio.com
-    
-
+  -
+  
 informative:
+
   NIST:
     author:
     - ins: D. Yaga
@@ -181,6 +182,7 @@ Certain industry verticals or asset-specific trading communities (e.g. Bonds) ma
 
 
 --- back
+
 
 
 
